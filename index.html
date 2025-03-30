@@ -43,9 +43,10 @@
         .gif-container {
             margin: 20px 0;
         }
-        img {
+        #leventeGif {
             width: 200px;  /* GIF'in boyutunu ayarlıyoruz */
             height: auto;
+            visibility: visible;
         }
     </style>
 </head>
@@ -83,9 +84,9 @@
 
         // GIF'i tekrar başlatmak için
         const gif = document.getElementById("leventeGif");
-        gif.style.animation = 'none';  // Animasyonu sıfırla
+        gif.style.visibility = 'hidden';  // GIF'i gizle
         gif.offsetHeight;  // Zorla yeniden render almasını sağla
-        gif.style.animation = '';  // Animasyonu başlat
+        gif.style.visibility = 'visible';  // GIF'i tekrar göster
     }
 </script>
 
