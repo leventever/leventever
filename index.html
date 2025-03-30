@@ -4,9 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Levent'e Verme</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        #gif {
+            display: none;
+            width: 300px;
+            height: auto;
+            margin-top: 20px;
+        }
+        #verButton {
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #counter {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Levent'e Verme</h1>
-    <button onclick="alert('Levent\'e verildi!')">Tıkla</button>
+    <button id="verButton">Levent'e Ver</button>
+    <p>Toplam Verme Sayısı: <span id="counter">0</span></p>
+    <img id="gif" src="levent.gif" alt="Levent'e Verildi">
+
+    <script>
+        let count = 0;
+        const button = document.getElementById('verButton');
+        const gif = document.getElementById('gif');
+        const counter = document.getElementById('counter');
+
+        button.addEventListener('click', () => {
+            count++;
+            counter.textContent = count;
+            gif.style.display = 'block';
+
+            setTimeout(() => {
+                gif.style.display = 'none';
+            }, 2000); // 2 saniye sonra kaybolacak
+        });
+    </script>
 </body>
 </html>
