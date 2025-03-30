@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levent'e Verme</title>
+</head>
+<body>
+    <h1>Levent'e Verme</h1>
+    <button onclick="showGif()">Tıkla</button>
+    <br>
+    <img id="gif" src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" alt="Levent'e Verildi GIF" width="300" style="display: none;">
+    
+    <script>
+        function showGif() {
+            document.getElementById("gif").style.display = "block";
+        }
+    </script>
+</body>
+</html>
