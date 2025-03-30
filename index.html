@@ -54,7 +54,7 @@
         const firebaseConfig = {
             apiKey: "AIzaSyDfJld2_W5dNzm6sjsCCQeoeSHg8qFzo7Y",
             authDomain: "leventever-efe64.firebaseapp.com",
-            databaseURL: "https://leventever-efe64-default-rtdb.firebaseio.com/",
+            databaseURL: "https://leventever-efe64-default-rtdb.firebaseio.com/", // Firebase Database URL burada!
             projectId: "leventever-efe64",
             storageBucket: "leventever-efe64.appspot.com",
             messagingSenderId: "356643416297",
@@ -82,13 +82,12 @@
         button.addEventListener('click', () => {
             button.disabled = true; // Çift tıklamayı önle
             counterRef.transaction((currentValue) => {
-                return (currentValue || 0) + 1; // Sayaç 1 artacak
+                return (currentValue || 0) + 1;
             }).then(() => {
-                gif.style.display = 'block'; // GIF göster
+                gif.style.display = 'block';
                 setTimeout(() => {
                     gif.style.display = 'none';
                     button.disabled = false; // Tekrar tıklanabilir yap
-                    alert("Levent'e Verildi!"); // Tıklandığında uyarı verir
                 }, 2000);
             });
         });
