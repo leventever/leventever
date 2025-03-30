@@ -42,7 +42,6 @@
         }
         .gif-container {
             margin: 20px 0;
-            text-align: center;
         }
         img {
             width: 200px;  /* GIF'in boyutunu ayarlıyoruz */
@@ -84,13 +83,11 @@
 
         // GIF'i tekrar başlatmak için
         const gif = document.getElementById("leventeGif");
-
-        // GIF'in src'sini sıfırlayıp yeniden yükleyelim
-        gif.src = '';  // GIF kaynağını sıfırla
-        gif.src = 'https://i.imgyukle.com/2025/03/30/CeRRNS.gif';  // Yeni kaynağı atayalım
+        gif.style.animation = 'none';  // Animasyonu sıfırla
+        gif.offsetHeight;  // Zorla yeniden render almasını sağla
+        gif.style.animation = '';  // Animasyonu başlat
     }
 </script>
 
 </body>
 </html>
-
