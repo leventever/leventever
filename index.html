@@ -40,8 +40,12 @@
             font-size: 36px;
             margin-bottom: 40px;
         }
-        img {
+        /* GIF'in yerleşimini ayarlıyoruz */
+        .gif-container {
             margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        img {
             width: 200px; /* Boyutlandırma */
         }
     </style>
@@ -52,31 +56,4 @@
 
 <div class="counter-container">
     <!-- Sayaç Değeri -->
-    <div class="counter" id="counterValue">0</div>
-    <!-- Sayaç Artırma Butonu -->
-    <button onclick="incrementCounter()">Levente Ver</button>
-    <!-- Bugüne kadar butona kaç kere tıklandığını göster -->
-    <div class="total" id="totalClicks">Bugüne kadar 0 kez verildi!</div>
-    
-    <!-- GIF Görseli -->
-    <img src="https://i.imgyukle.com/2025/03/30/CeRRNS.gif" alt="Levente Ver Gif">
-</div>
-
-<script>
-    // Sayaç ve tıklama sayısını tutan değişkenler
-    let counter = 0;
-    let totalClicks = 0;
-
-    // Sayacı artıran fonksiyon
-    function incrementCounter() {
-        counter++;  // Sayaç değeri 1 artırılır
-        totalClicks++;  // Butona tıklama sayısı artırılır
-
-        // Sayacı ve tıklama sayısını ekranda güncelle
-        document.getElementById("counterValue").innerText = counter;
-        document.getElementById("totalClicks").innerText = `Bugüne kadar ${totalClicks} kez verildi!`;
-    }
-</script>
-
-</body>
-</html>
+    <div class="counter" id="counterValue">0</div
