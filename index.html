@@ -40,23 +40,15 @@
             font-size: 36px;
             margin-bottom: 40px;
         }
-        .gif-container {
-            margin: 20px 0;
-        }
         img {
-            width: 200px;  /* GIF'in boyutunu ayarlıyoruz */
-            height: auto;
+            margin-top: 20px;
+            width: 200px; /* Boyutlandırma */
         }
     </style>
 </head>
 <body>
 
 <h1>Levente Ver !</h1>
-
-<div class="gif-container">
-    <!-- GIF Resmi -->
-    <img id="leventeGif" src="https://i.imgyukle.com/2025/03/30/CeRRNS.gif" alt="Levente Ver Gif" />
-</div>
 
 <div class="counter-container">
     <!-- Sayaç Değeri -->
@@ -65,6 +57,9 @@
     <button onclick="incrementCounter()">Levente Ver</button>
     <!-- Bugüne kadar butona kaç kere tıklandığını göster -->
     <div class="total" id="totalClicks">Bugüne kadar 0 kez verildi!</div>
+    
+    <!-- GIF Görseli -->
+    <img src="https://i.imgyukle.com/2025/03/30/CeRRNS.gif" alt="Levente Ver Gif">
 </div>
 
 <script>
@@ -80,13 +75,6 @@
         // Sayacı ve tıklama sayısını ekranda güncelle
         document.getElementById("counterValue").innerText = counter;
         document.getElementById("totalClicks").innerText = `Bugüne kadar ${totalClicks} kez verildi!`;
-
-        // GIF'i tekrar başlatmak için
-        const gif = document.getElementById("leventeGif");
-
-        // GIF'in src'sini sıfırlayıp yeniden yükleyelim
-        gif.src = '';  // GIF kaynağını sıfırla
-        gif.src = 'https://i.imgyukle.com/2025/03/30/CeRRNS.gif';  // Yeni kaynağı atayalım
     }
 </script>
 
