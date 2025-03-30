@@ -40,11 +40,23 @@
             font-size: 36px;
             margin-bottom: 40px;
         }
+        .gif-container {
+            margin: 20px 0;
+        }
+        img {
+            width: 200px;  /* GIF'in boyutunu ayarlıyoruz */
+            height: auto;
+        }
     </style>
 </head>
 <body>
 
 <h1>Levente Ver !</h1>
+
+<div class="gif-container">
+    <!-- GIF Resmi -->
+    <img id="leventeGif" src="https://i.imgyukle.com/2025/03/30/CeRRNS.gif" alt="Levente Ver Gif" />
+</div>
 
 <div class="counter-container">
     <!-- Sayaç Değeri -->
@@ -68,6 +80,12 @@
         // Sayacı ve tıklama sayısını ekranda güncelle
         document.getElementById("counterValue").innerText = counter;
         document.getElementById("totalClicks").innerText = `Bugüne kadar ${totalClicks} kez verildi!`;
+
+        // GIF'i tekrar başlatmak için
+        const gif = document.getElementById("leventeGif");
+        gif.style.animation = 'none';  // Animasyonu sıfırla
+        gif.offsetHeight;  // Zorla yeniden render almasını sağla
+        gif.style.animation = '';  // Animasyonu başlat
     }
 </script>
 
