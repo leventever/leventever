@@ -39,13 +39,16 @@
     <img id="gif" src="levent.gif" alt="Levent'e Verildi">
 
     <script>
-        let count = 0;
+        let count = localStorage.getItem('vermeSayisi') ? parseInt(localStorage.getItem('vermeSayisi')) : 0;
         const button = document.getElementById('verButton');
         const gif = document.getElementById('gif');
         const counter = document.getElementById('counter');
 
+        counter.textContent = count;
+
         button.addEventListener('click', () => {
             count++;
+            localStorage.setItem('vermeSayisi', count);
             counter.textContent = count;
             gif.style.display = 'block';
 
@@ -56,3 +59,4 @@
     </script>
 </body>
 </html>
+
