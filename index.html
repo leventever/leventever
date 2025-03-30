@@ -68,26 +68,18 @@
 </div>
 
 <script>
-    // Sayaç ve tıklama sayısını tutan değişkenler
-    let counter = 0;
-    let totalClicks = 0;
-
-    // Sayacı artıran fonksiyon
-    function incrementCounter() {
-        counter++;  // Sayaç değeri 1 artırılır
-        totalClicks++;  // Butona tıklama sayısı artırılır
-
-        // Sayacı ve tıklama sayısını ekranda güncelle
-        document.getElementById("counterValue").innerText = counter;
-        document.getElementById("totalClicks").innerText = `Bugüne kadar ${totalClicks} kez verildi!`;
-
-        // GIF'i tekrar başlatmak için
-        const gif = document.getElementById("leventeGif");
-        gif.style.animation = 'none';  // Animasyonu sıfırla
-        gif.offsetHeight;  // Zorla yeniden render almasını sağla
-        gif.style.animation = '';  // Animasyonu başlat
+    // Sayfada sayaç ve tıklama sayısını saklamak için localStorage kullanıyoruz
+    if (localStorage.getItem('counter') === null) {
+        localStorage.setItem('counter', 0);  // Eğer yoksa sayaç 0 olarak başlasın
     }
-</script>
 
-</body>
-</html>
+    if (localStorage.getItem('totalClicks') === null) {
+        localStorage.setItem('totalClicks', 0);  // Eğer yoksa toplam tıklama sayısı 0 olarak başlasın
+    }
+
+    // Başlangıçta localStorage'dan sayaç ve toplam tıklama sayısını alıyoruz
+    let counter = parseInt(localStorage.getItem('counter'));
+    let totalClicks = parseInt(localStorage.getItem('totalClicks'));
+
+    // Sayacı ve toplam tıklama sayısını ekranda güncelle
+    document.getElementById("
