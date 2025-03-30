@@ -21,18 +21,73 @@
         .counter {
             font-size: 48px;
             margin: 20px 0;
-            color: #333;
         }
         button {
             font-size: 20px;
             padding: 10px 20px;
             cursor: pointer;
-            background-color: #FF6347; /* Daha hoş bir kırmızı */
+            background-color: red;
             color: white;
             border: none;
             border-radius: 5px;
             margin-top: 20px;
-            transition: background-color 0.3s ease;
         }
-        button:hover {
-            background-color:
+        .total {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        .gif-container {
+            margin: 20px 0;
+        }
+        img {
+            width: 200px;  /* GIF'in boyutunu ayarlıyoruz */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Levente Ver !</h1>
+
+<div class="gif-container">
+    <!-- GIF Resmi -->
+    <img id="leventeGif" src="https://i.imgyukle.com/2025/03/30/CeRRNS.gif" alt="Levente Ver Gif" />
+</div>
+
+<div class="counter-container">
+    <!-- Sayaç Değeri -->
+    <div class="counter" id="counterValue">0</div>
+    <!-- Sayaç Artırma Butonu -->
+    <button onclick="incrementCounter()">Levente Ver</button>
+    <!-- Bugüne kadar butona kaç kere tıklandığını göster -->
+    <div class="total" id="totalClicks">Bugüne kadar 0 kez verildi!</div>
+</div>
+
+<script>
+    // Sayaç ve tıklama sayısını tutan değişkenler
+    let counter = 0;
+    let totalClicks = 0;
+
+    // Sayacı artıran fonksiyon
+    function incrementCounter() {
+        counter++;  // Sayaç değeri 1 artırılır
+        totalClicks++;  // Butona tıklama sayısı artırılır
+
+        // Sayacı ve tıklama sayısını ekranda güncelle
+        document.getElementById("counterValue").innerText = counter;
+        document.getElementById("totalClicks").innerText = `Bugüne kadar ${totalClicks} kez verildi!`;
+
+        // GIF'i tekrar başlatmak için
+        const gif = document.getElementById("leventeGif");
+        gif.style.animation = 'none';  // Animasyonu sıfırla
+        gif.offsetHeight;  // Zorla yeniden render almasını sağla
+        gif.style.animation = '';  // Animasyonu başlat
+    }
+</script>
+
+</body>
+</html>
