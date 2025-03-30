@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sayac Uygulaması</title>
+    <title>Levente Ver Sayaç</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -25,33 +26,50 @@
             font-size: 20px;
             padding: 10px 20px;
             cursor: pointer;
-            background-color: #007bff;
+            background-color: red;
             color: white;
             border: none;
             border-radius: 5px;
+            margin-top: 20px;
+        }
+        .total {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 40px;
         }
     </style>
 </head>
 <body>
 
+<h1>Levente Ver !</h1>
+
 <div class="counter-container">
+    <!-- Sayaç Değeri -->
     <div class="counter" id="counterValue">0</div>
-    <button onclick="incrementCounter()">Sayacı Artır</button>
+    <!-- Sayaç Artırma Butonu -->
+    <button onclick="incrementCounter()">Levente Ver</button>
+    <!-- Bugüne kadar butona kaç kere tıklandığını göster -->
+    <div class="total" id="totalClicks">Bugüne kadar 0 kez verildi!</div>
 </div>
 
 <script>
-    // Sayacın başlangıç değeri
+    // Sayaç ve tıklama sayısını tutan değişkenler
     let counter = 0;
+    let totalClicks = 0;
 
     // Sayacı artıran fonksiyon
     function incrementCounter() {
         counter++;  // Sayaç değeri 1 artırılır
-        document.getElementById("counterValue").innerText = counter;  // Sayacı ekranda güncelle
+        totalClicks++;  // Butona tıklama sayısı artırılır
+
+        // Sayacı ve tıklama sayısını ekranda güncelle
+        document.getElementById("counterValue").innerText = counter;
+        document.getElementById("totalClicks").innerText = `Bugüne kadar ${totalClicks} kez verildi!`;
     }
 </script>
 
 </body>
 </html>
-
-
-
