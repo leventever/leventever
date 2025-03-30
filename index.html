@@ -30,12 +30,17 @@
             font-weight: bold;
             margin-top: 10px;
         }
+        #totalText {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <h1>Levent'e Verme</h1>
+    <p id="totalText">Bugüne kadar <span id="counter">0</span> kere Levent'e verildi!</p>
     <button id="verButton">Levent'e Ver</button>
-    <p>Toplam Verme Sayısı: <span id="counter">0</span></p>
     <img id="gif" src="levent.gif" alt="Levent'e Verildi">
 
     <script>
@@ -43,13 +48,16 @@
         const button = document.getElementById('verButton');
         const gif = document.getElementById('gif');
         const counter = document.getElementById('counter');
+        const totalText = document.getElementById('totalText');
 
         counter.textContent = count;
+        totalText.innerHTML = `Bugüne kadar <span id="counter">${count}</span> kere Levent'e verildi!`;
 
         button.addEventListener('click', () => {
             count++;
             localStorage.setItem('vermeSayisi', count);
             counter.textContent = count;
+            totalText.innerHTML = `Bugüne kadar <span id="counter">${count}</span> kere Levent'e verildi!`;
             gif.style.display = 'block';
 
             setTimeout(() => {
@@ -59,4 +67,3 @@
     </script>
 </body>
 </html>
-
