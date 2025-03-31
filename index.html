@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Levente Ver Sayaç</title>
     <style>
         body {
@@ -32,6 +32,10 @@
             border-radius: 5px;
             margin-top: 20px;
         }
+        .total {
+            margin-top: 20px;
+            font-size: 20px;
+        }
         h1 {
             font-size: 36px;
             margin-bottom: 40px;
@@ -40,17 +44,8 @@
             margin: 20px 0;
         }
         img {
-            width: 200px;
+            width: 200px;  /* GIF'in boyutunu ayarlıyoruz */
             height: auto;
-        }
-        .has-text-align-center {
-            text-align: center;
-            padding-top: var(--wp--preset--spacing--40);
-            font-size: clamp(0.875rem, 0.875rem + ((1vw - 0.2rem) * 0.227), 1rem);
-            font-style: normal;
-            font-weight: 400;
-            line-height: 1;
-            color: var(--wp--preset--color--primary);
         }
     </style>
 </head>
@@ -59,318 +54,38 @@
 <h1>Levente Ver !</h1>
 
 <div class="gif-container">
+    <!-- GIF Resmi -->
     <img id="leventeGif" src="https://hizliresim.com/hp51spu" alt="Levente Ver Gif" />
 </div>
 
 <div class="counter-container">
+    <!-- Sayaç Değeri -->
     <div class="counter" id="counterValue">0</div>
+    <!-- Sayaç Artırma Butonu -->
     <button onclick="incrementCounter()">Levente Ver</button>
-
-<p class="has-text-align-center has-primary-color has-text-color has-link-color wp-elements-9a9c7154486f062c2ec9ed8f83210075" id="totalCountText" style="padding-top:var(--wp--preset--spacing--40);font-size:clamp(0.875rem, 0.875rem + ((1vw - 0.2rem) * 0.227), 1rem);font-style:normal;font-weight:400;line-height:1">Bugüne kadar <span class="custom-number-style" id="totalCountNumber">0</span> kere verildi!</p>
-
-
-
+    <!-- Bugüne kadar butona kaç kere tıklandığını göster -->
+    <div class="total" id="totalClicks">Bugüne kadar 0 kez verildi!</div>
 </div>
 
 <script>
+    // Sayaç ve tıklama sayısını tutan değişkenler
     let counter = 0;
     let totalClicks = 0;
 
+    // Sayacı artıran fonksiyon
     function incrementCounter() {
-        counter++;
-        totalClicks++;
+        counter++;  // Sayaç değeri 1 artırılır
+        totalClicks++;  // Butona tıklama sayısı artırılır
 
+        // Sayacı ve tıklama sayısını ekranda güncelle
         document.getElementById("counterValue").innerText = counter;
-        document.getElementById("totalCountNumber").innerText = totalClicks;
+        document.getElementById("totalClicks").innerText = `Bugüne kadar ${totalClicks} kez verildi!`;
 
+        // GIF'i tekrar başlatmak için
         const gif = document.getElementById("leventeGif");
-        gif.style.animation = 'none';
-        gif.offsetHeight;
-        gif.style.animation = '';
-    }
-</script>
-
-</body>
-</html>
-
-FN A <goodalekfromankara@gmail.com>, 31 Mar 2025 Pzt, 18:40 tarihinde şunu yazdı:
-
-
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Levente Ver Sayaç</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f7f7f7;
-        }
-        .counter-container {
-            text-align: center;
-        }
-        .counter {
-            font-size: 48px;
-            margin: 20px 0;
-        }
-        button {
-            font-size: 20px;
-            padding: 10px 20px;
-            cursor: pointer;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
-        .gif-container {
-            margin: 20px 0;
-        }
-        img {
-            width: 200px;
-            height: auto;
-        }
-        .has-text-align-center {
-            text-align: center;
-            padding-top: var(--wp--preset--spacing--40);
-            font-size: clamp(0.875rem, 0.875rem + ((1vw - 0.2rem) * 0.227), 1rem);
-            font-style: normal;
-            font-weight: 400;
-            line-height: 1;
-            color: var(--wp--preset--color--primary);
-        }
-    </style>
-</head>
-<body>
-
-<h1>Levente Ver !</h1>
-
-<div class="gif-container">
-    <img id="leventeGif" src="https://i.imgyukle.com/2025/03/30/CeRRNS.gif" alt="Levente Ver Gif" />
-</div>
-
-<div class="counter-container">
-    <div class="counter" id="counterValue">0</div>
-    <button onclick="incrementCounter()">Levente Ver</button>
-    <p class="has-text-align-center has-primary-color has-text-color has-link-color wp-elements-9a9c7154486f062c2ec9ed8f83210075" id="totalCountText">
-        Bugüne kadar <span class="custom-number-style" id="totalCountNumber">0</span> kere verildi!
-    </p>
-</div>
-
-<script>
-    let counter = 0;
-    let totalClicks = 0;
-
-    function incrementCounter() {
-        counter++;
-        totalClicks++;
-
-        document.getElementById("counterValue").innerText = counter;
-        document.getElementById("totalCountNumber").innerText = totalClicks;
-
-        const gif = document.getElementById("leventeGif");
-        gif.style.animation = 'none';
-        gif.offsetHeight;
-        gif.style.animation = '';
-    }
-</script>
-
-</body>
-</html>
-
-Ütopik Gücenik <utopikgucenik@gmail.com>, 31 Mar 2025 Pzt, 18:45 tarihinde şunu yazdı:
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Levente Ver Sayaç</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f7f7f7;
-        }
-        .counter-container {
-            text-align: center;
-        }
-        .counter {
-            font-size: 48px;
-            margin: 20px 0;
-        }
-        button {
-            font-size: 20px;
-            padding: 10px 20px;
-            cursor: pointer;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
-        .gif-container {
-            margin: 20px 0;
-        }
-        img {
-            width: 200px;
-            height: auto;
-        }
-        .has-text-align-center {
-            text-align: center;
-            padding-top: var(--wp--preset--spacing--40);
-            font-size: clamp(0.875rem, 0.875rem + ((1vw - 0.2rem) * 0.227), 1rem);
-            font-style: normal;
-            font-weight: 400;
-            line-height: 1;
-            color: var(--wp--preset--color--primary);
-        }
-    </style>
-</head>
-<body>
-
-<h1>Levente Ver !</h1>
-
-<div class="gif-container">
-    <img id="leventeGif" src="https://hizliresim.com/hp51spu" alt="Levente Ver Gif" />
-</div>
-
-<div class="counter-container">
-    <div class="counter" id="counterValue">0</div>
-    <button onclick="incrementCounter()">Levente Ver</button>
-    <p class="has-text-align-center has-primary-color has-text-color has-link-color wp-elements-9a9c7154486f062c2ec9ed8f83210075" id="totalCountText">
-        Bugüne kadar <span class="custom-number-style" id="totalCountNumber">0</span> kere verildi!
-    </p>
-</div>
-
-<script>
-    let counter = 0;
-    let totalClicks = 0;
-
-    function incrementCounter() {
-        counter++;
-        totalClicks++;
-
-        document.getElementById("counterValue").innerText = counter;
-        document.getElementById("totalCountNumber").innerText = totalClicks;
-
-        const gif = document.getElementById("leventeGif");
-        gif.style.animation = 'none';
-        gif.offsetHeight;
-        gif.style.animation = '';
-    }
-</script>
-
-</body>
-</html>
-
-FN A <goodalekfromankara@gmail.com>, 31 Mar 2025 Pzt, 18:40 tarihinde şunu yazdı:
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Levente Ver Sayaç</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f7f7f7;
-        }
-        .counter-container {
-            text-align: center;
-        }
-        .counter {
-            font-size: 48px;
-            margin: 20px 0;
-        }
-        button {
-            font-size: 20px;
-            padding: 10px 20px;
-            cursor: pointer;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
-        .gif-container {
-            margin: 20px 0;
-        }
-        img {
-            width: 200px;
-            height: auto;
-        }
-        .has-text-align-center {
-            text-align: center;
-            padding-top: var(--wp--preset--spacing--40);
-            font-size: clamp(0.875rem, 0.875rem + ((1vw - 0.2rem) * 0.227), 1rem);
-            font-style: normal;
-            font-weight: 400;
-            line-height: 1;
-            color: var(--wp--preset--color--primary);
-        }
-    </style>
-</head>
-<body>
-
-<h1>Levente Ver !</h1>
-
-<div class="gif-container">
-    <img id="leventeGif" src="https://i.imgyukle.com/2025/03/30/CeRRNS.gif" alt="Levente Ver Gif" />
-</div>
-
-<div class="counter-container">
-    <div class="counter" id="counterValue">0</div>
-    <button onclick="incrementCounter()">Levente Ver</button>
-    <p class="has-text-align-center has-primary-color has-text-color has-link-color wp-elements-9a9c7154486f062c2ec9ed8f83210075" id="totalCountText">
-        Bugüne kadar <span class="custom-number-style" id="totalCountNumber">0</span> kere verildi!
-    </p>
-</div>
-
-<script>
-    let counter = 0;
-    let totalClicks = 0;
-
-    function incrementCounter() {
-        counter++;
-        totalClicks++;
-
-        document.getElementById("counterValue").innerText = counter;
-        document.getElementById("totalCountNumber").innerText = totalClicks;
-
-        const gif = document.getElementById("leventeGif");
-        gif.style.animation = 'none';
-        gif.offsetHeight;
-        gif.style.animation = '';
+        gif.style.animation = 'none';  // Animasyonu sıfırla
+        gif.offsetHeight;  // Zorla yeniden render almasını sağla
+        gif.style.animation = '';  // Animasyonu başlat
     }
 </script>
 
