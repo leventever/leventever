@@ -32,10 +32,6 @@
             border-radius: 5px;
             margin-top: 20px;
         }
-        .total {
-            margin-top: 20px;
-            font-size: 20px;
-        }
         h1 {
             font-size: 36px;
             margin-bottom: 40px;
@@ -44,8 +40,17 @@
             margin: 20px 0;
         }
         img {
-            width: 200px;  /* GIF'in boyutunu ayarlıyoruz */
+            width: 200px;
             height: auto;
+        }
+        .has-text-align-center {
+            text-align: center;
+            padding-top: var(--wp--preset--spacing--40);
+            font-size: clamp(0.875rem, 0.875rem + ((1vw - 0.2rem) * 0.227), 1rem);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            color: var(--wp--preset--color--primary);
         }
     </style>
 </head>
@@ -54,38 +59,32 @@
 <h1>Levente Ver !</h1>
 
 <div class="gif-container">
-    <!-- GIF Resmi -->
     <img id="leventeGif" src="https://i.imgyukle.com/2025/03/30/CeRRNS.gif" alt="Levente Ver Gif" />
 </div>
 
 <div class="counter-container">
-    <!-- Sayaç Değeri -->
     <div class="counter" id="counterValue">0</div>
-    <!-- Sayaç Artırma Butonu -->
     <button onclick="incrementCounter()">Levente Ver</button>
-    <!-- Bugüne kadar butona kaç kere tıklandığını göster -->
-    <div class="total" id="totalClicks">Bugüne kadar 0 kez verildi!</div>
+    <p class="has-text-align-center has-primary-color has-text-color has-link-color wp-elements-9a9c7154486f062c2ec9ed8f83210075" id="totalCountText">
+        Bugüne kadar <span class="custom-number-style" id="totalCountNumber">0</span> kere verildi!
+    </p>
 </div>
 
 <script>
-    // Sayaç ve tıklama sayısını tutan değişkenler
     let counter = 0;
     let totalClicks = 0;
 
-    // Sayacı artıran fonksiyon
     function incrementCounter() {
-        counter++;  // Sayaç değeri 1 artırılır
-        totalClicks++;  // Butona tıklama sayısı artırılır
+        counter++;
+        totalClicks++;
 
-        // Sayacı ve tıklama sayısını ekranda güncelle
         document.getElementById("counterValue").innerText = counter;
-        document.getElementById("totalClicks").innerText = `Bugüne kadar ${totalClicks} kez verildi!`;
+        document.getElementById("totalCountNumber").innerText = totalClicks;
 
-        // GIF'i tekrar başlatmak için
         const gif = document.getElementById("leventeGif");
-        gif.style.animation = 'none';  // Animasyonu sıfırla
-        gif.offsetHeight;  // Zorla yeniden render almasını sağla
-        gif.style.animation = '';  // Animasyonu başlat
+        gif.style.animation = 'none';
+        gif.offsetHeight;
+        gif.style.animation = '';
     }
 </script>
 
