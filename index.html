@@ -44,7 +44,7 @@
             margin: 20px 0;
         }
         img {
-            width: 200px;  /* GIF'in boyutunu ayarlıyoruz */
+            width: 200px;  /* Görselin boyutunu ayarlıyoruz */
             height: auto;
         }
     </style>
@@ -54,8 +54,8 @@
 <h1>Levente Ver !</h1>
 
 <div class="gif-container">
-    <!-- GIF Resmi -->
-    <img id="leventeGif" src="/CeRRNS.gif" alt="Levente Ver Gif" />
+    <!-- Yeni Görsel -->
+    <img id="leventeGif" src="dimdick_levent.jpg" alt="Levente Ver Görsel" />
 </div>
 
 <div class="counter-container">
@@ -77,15 +77,9 @@
         counter++;  // Sayaç değeri 1 artırılır
         totalClicks++;  // Butona tıklama sayısı artırılır
 
-        // Sayacı ve tıklama sayısını ekranda güncelle
+        // Sayaçı ve tıklama sayısını ekranda güncelle
         document.getElementById("counterValue").innerText = counter;
         document.getElementById("totalClicks").innerText = `Bugüne kadar ${totalClicks} kez verildi!`;
-
-        // GIF'i tekrar başlatmak için
-        const gif = document.getElementById("leventeGif");
-        gif.style.animation = 'none';  // Animasyonu sıfırla
-        gif.offsetHeight;  // Zorla yeniden render almasını sağla
-        gif.style.animation = '';  // Animasyonu başlat
     }
 </script>
 
