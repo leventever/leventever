@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Levente Ver Sayaç</title>
     <style>
         body {
@@ -50,37 +50,37 @@
     </style>
 </head>
 <body>
- 
+
 <h1>Levente Ver !</h1>
- 
+
 <div class="gif-container">
     <!-- GIF Resmi -->
-    <img id="leventeGif" src="https://hizliresim.com/hp51spu" alt="Levente Ver Gif" />
+    <img id="leventeGif" src="/CeRRNS.gif" alt="Levente Ver Gif" />
 </div>
- 
+
 <div class="counter-container">
     <!-- Sayaç Değeri -->
-    <div class="counter" id="counterValue">0</div>
+    <div class="counter" id="counterValue">937282</div>
     <!-- Sayaç Artırma Butonu -->
     <button onclick="incrementCounter()">Levente Ver</button>
     <!-- Bugüne kadar butona kaç kere tıklandığını göster -->
-  <div class="has-text-align-center has-primary-color has-text-color has-link-color wp-elements-9a9c7154486f062c2ec9ed8f83210075" id="totalCountText" style="padding-top:var(--wp--preset--spacing--40);font-size:clamp(0.875rem, 0.875rem + ((1vw - 0.2rem) * 0.227), 1rem);font-style:normal;font-weight:400;line-height:1">Bugüne kadar <span class="custom-number-style" id="totalCountNumber">0</span> kere verildi!</div>
+    <div class="total" id="totalClicks">Bugüne kadar 937282 kez verildi!</div>
 </div>
- 
+
 <script>
     // Sayaç ve tıklama sayısını tutan değişkenler
-    let counter = 0;
-    let totalClicks = 0;
- 
+    let counter = 937282;
+    let totalClicks = 937282;
+
     // Sayacı artıran fonksiyon
     function incrementCounter() {
         counter++;  // Sayaç değeri 1 artırılır
         totalClicks++;  // Butona tıklama sayısı artırılır
- 
+
         // Sayacı ve tıklama sayısını ekranda güncelle
         document.getElementById("counterValue").innerText = counter;
         document.getElementById("totalClicks").innerText = `Bugüne kadar ${totalClicks} kez verildi!`;
- 
+
         // GIF'i tekrar başlatmak için
         const gif = document.getElementById("leventeGif");
         gif.style.animation = 'none';  // Animasyonu sıfırla
@@ -88,7 +88,6 @@
         gif.style.animation = '';  // Animasyonu başlat
     }
 </script>
- 
+
 </body>
 </html>
- 
